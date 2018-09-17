@@ -1,4 +1,18 @@
 public class JobHandler {
+//	Employee e1 = new Employee("John Doe", 4.25, 10, 1, false, 3);
+//	Employee e2 = new Employee("Barbara Bark", 18.00, 20, 3, true, 1);
+//	Employee e3 = new Employee("Harold Debeste", 40.25, 40, 8, true, 0);
+//	Employee e4 = new Employee("Jimmy Sortle", 12.25, 40, 6, true, 2);
+//	Employee e5 = new Employee("Samantha Hold", 65.35, 40, 3, false, 0);
+//	Employee e6 = new Employee("Carol Kim", 15.00, 20, 5, true, 5);
+//	
+//	Position p1 = new Position("CEO-2", 90, 120.00, true, true);
+//	Position p2 = new Position("HandyMan-1", 10, 12.00, false, false);
+//	Position p3 = new Position("ComputerEng-3", 40, 26.00, true, false);
+//	Position p4 = new Position("Secretary-2", 20, 18.00, true, true);
+//	Position p5 = new Position("LeadSoftEngineer-3", 60, 40.00, true, true);
+//	Position p6 = new Position("BranchSupervisor-6", 80, 60.00, true, false);
+//	Position p7 = new Position("EngineeringAide-2", 40, 40.00, true, true);
 	
 	/**
 	 * A method that returns the rank of an employee.
@@ -24,6 +38,36 @@ public class JobHandler {
 		int currentRank = 0;
 		int warningDeRank = 0;
 		
+		switch(warningTotals){
+		case 1:
+			warningDeRank = 5;
+			break;
+		case 2:
+			warningDeRank = 10;
+			break;
+		case 3:
+			warningDeRank = 15;
+			break;
+		default:
+			warningDeRank =  warningTotals * 6;
+			break;		
+		}
+		
+		if(yearlySalary < 10000){
+			currentRank = 20;
+		}
+		else if(yearlySalary < 50000){
+			currentRank = 40;
+		}
+		else if(yearlySalary < 100000){
+			currentRank = 60;
+		}
+		else{
+			currentRank = 80;
+		}
+		
+		
+			
 		//Add Code Here [You have to use Switch and If/Else to get graded] 
 		
 		return currentRank - warningDeRank;
